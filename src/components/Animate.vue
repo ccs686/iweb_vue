@@ -1,0 +1,28 @@
+<template>
+  <div id="example-1">
+    <button @click="show = !show">Toggle render</button>
+    <transition name="slide-fade">
+      <p v-if="show">hello</p>
+    </transition>
+  </div>
+</template>
+<script>
+export default {
+  name: "Yuanli",
+  data() {
+    return {
+      show: true
+    };
+  }
+};
+</script>
+<style>
+.slide-fade-enter-active {
+  transition: all 0.3s ease;
+}
+.slide-fade-enter, .slide-fade-leave-to
+/* .slide-fade-leave-active for below version 2.1.8 */ {
+  transform: translateX(10px);
+  opacity: 0;
+}
+</style>
